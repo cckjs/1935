@@ -36,7 +36,7 @@ public class JPAConfig {
 
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[] { "com.cckjs.cmall.dao" });
+		em.setPackagesToScan(new String[] { "com.cckjs.cmall.dao","com.cckjs.cmall.model" });
 
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
