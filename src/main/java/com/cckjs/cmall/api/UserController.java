@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cckjs.cmall.model.user.UserModel;
 import com.cckjs.cmall.service.user.UserService;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/user")
@@ -17,7 +19,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userSerivce;
-	
+	@ApiOperation(value = "获取用户信息", httpMethod = "get", notes = "根据用户Id来获取用户信息")
+	@ApiParam(required = true, name = "id", value = "用户Id")
 	@RequestMapping(value = "/{id}",method = RequestMethod.GET)
 	public UserModel get(@PathVariable Integer id,@PageableDefault Pageable pageable){
 		UserModel model = userSerivce.getUser(id);

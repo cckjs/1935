@@ -20,7 +20,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 public class AppInitializer implements WebApplicationInitializer {
 
     private static final String CONFIG_LOCATION = "com.cckjs.cmall.config";
-    private static final String MAPPING_URL = "/api/*";
+    private static final String MAPPING_URL = "/";
 
     @Override
     public void onStartup(ServletContext servletContext)
